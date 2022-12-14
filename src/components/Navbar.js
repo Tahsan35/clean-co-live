@@ -1,6 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ children }) => {
     return (
         <div className="drawer drawer-end">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -14,20 +15,25 @@ const Navbar = () => {
                     </div>
                     <div className="flex-none hidden lg:block">
                         <ul className="menu menu-horizontal">
-                            <li><a>Navbar Item 1</a></li>
-                            <li><a>Navbar Item 2</a></li>
+                            <li><NavLink to='/home' className='rounded-lg'>Home</NavLink></li>
+                            <li><NavLink to='/about' className='rounded-lg'>About</NavLink></li>
+                            <li><NavLink to='/services' className='rounded-lg'>Services</NavLink></li>
+                            <li><NavLink to='/contact' className='rounded-lg'>Contact</NavLink></li>
+                            <li><NavLink to='/login' className='rounded-lg'>Login</NavLink></li>
                         </ul>
                     </div>
                 </div>
+                {children}
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 bg-base-100">
-                    <li><a>Sidebar Item 1</a></li>
-                    <li><a>Sidebar Item 2</a></li>
-
+                    <li><NavLink to='/home' className='rounded-lg'>Home</NavLink></li>
+                    <li><NavLink to='/about' className='rounded-lg'>About</NavLink></li>
+                    <li><NavLink to='/services' className='rounded-lg'>Services</NavLink></li>
+                    <li><NavLink to='/contact' className='rounded-lg'>Contact</NavLink></li>
+                    <li><NavLink to='/login' className='rounded-lg'>Login</NavLink></li>
                 </ul>
-
             </div>
         </div>
     );
